@@ -511,6 +511,15 @@ body {
     height: auto;
 }
 
+.fire-ext{
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .fire-ext {
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 767px) {
   .building-section {
