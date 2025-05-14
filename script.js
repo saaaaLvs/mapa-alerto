@@ -59,7 +59,8 @@
     { title: "Mapa-Alerto", url: "mapa-alerto.html", keywords: ["mapa-alerto", "mapa alerto", "about", "project","overview"] },
     { title: "University Profile", url: "university-profile.html", keywords: ["university", "profile", "lpu", "cavite", "history", "viva pirata"] },
     { title: "Events", url: "events.html", keywords: ["events", "seminars", "training"] },
-    { title: "FAQs", url: "faq.html", keywords: ["faq", "faqs", "questions", "security", "help"] }
+    { title: "FAQs", url: "faq.html", keywords: ["faq", "faqs", "questions", "security", "help"] },
+    { title: "Comics", url: "comics.html", keywords: ["mapa-alerto comics", "mapa alerto comics","comic", "comics", "scan me", "cartoon", "drawing"] }
   ];
 
   document.addEventListener('DOMContentLoaded', function () {
