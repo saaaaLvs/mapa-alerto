@@ -611,6 +611,16 @@ body {
   padding: 4rem 2rem;
 }
 
+.comics-img{
+  max-width: 60%;
+}
+
+@media (max-width: 768px) {
+  .comics-img {
+    max-width: 100%;
+  }
+}
+
 .scan-button {
   background-color: #8b0000;
   color: white;
