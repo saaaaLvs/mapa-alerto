@@ -7,9 +7,10 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* font-family: "Onest", sans-serif;
-  font-optical-sizing: auto; */
-  font-family: Helvetica, sans-serif;
+  font-family: 'Zapf Humanist 601 BT';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Zapf Humanist 601 BT'), url('bodoni-six-itc-bold-italic-os-5871d33e4dc4a.woff') format('woff');
 }
 
 /* Dropdown container */
