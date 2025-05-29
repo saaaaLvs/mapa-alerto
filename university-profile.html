@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - University Profile</title>
+  <link rel="icon" type="image/png" href="assets/LPU-Logo.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Loader -->
+  <div id="loader-overlay">
+    <img src="assets/loading-screen.gif" alt="Loading..." style="max-width: 100%; padding: 0; margin: 0" />
+    <p id="loader-message">Getting things ready, please wait...</p>
+  </div>
+
+  <!-- Mobile Search Container (Fixed position overlay) -->
+  <div class="mobile-search-container" id="mobileSearchContainer">
+    <div class="mobile-search-wrapper">
+      <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search pages..." autocomplete="off">
+      <i class="bi bi-x-lg mobile-search-close" id="mobileSearchClose"></i>
+      <div class="search-results" id="mobileSearchResults"></div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-custom">
+    <div class="container-fluid">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
+        <!-- Logo + Toggler + Mobile Search Icon -->
+        <div class="d-flex align-items-center">
+          <button class="navbar-toggler me-2" type="button" onclick="toggleMenu()">
+            <i class="bi bi-list"></i>
+          </button>
+          <a class="navbar-brand me-2" href="index.html">
+            <img src="banner-desktop.png" alt="LPU Logo" class="logo-img img-fluid" />
+          </a>
+          <!-- Mobile Search Button -->
+          <button class="mobile-search-btn" id="mobileSearchBtn">
+            <i class="bi bi-search text-white"></i>
+          </button>
+        </div>
+
+        <!-- Desktop Search Bar -->
+        <div class="navbar-nav-section">
+          <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search pages..." autocomplete="off">
+            <i class="bi bi-search search-icon" id="searchIcon"></i>
+            <div class="search-results" id="searchResults"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hidden Nav Links -->
+  <div class="top-links" id="navLinks">
+    <div class="dropdown">
+      <a class="dropdown-toggle" style="cursor: default">COECSA Map</a>
+      <div class="dropdown-menu">
+        <a href="coecsa.html">COECSA Building</a>
+        <a href="groundfloor.html">Ground Floor</a>
+        <a href="2nd-floor.html">2nd Floor</a>
+        <a href="3rd-floor.html">3rd Floor</a>
+        <a href="5th-floor.html">5th Floor</a>
+        <a href="6th-floor.html">6th Floor</a>
+        <a href="7th-floor.html">7th Floor</a>
+        <a href="safe-zone.html">Safe Zone</a>
+      </div>
+    </div>
+
+    <span class="separator d-none d-md-inline">|</span>
+    <div class="dropdown">
+      <a class="dropdown-toggle" style="cursor: default">Guidelines</a>
+      <div class="dropdown-menu">
+        <a href="what-to-do.html">What To Do</a>
+        <a href="contacts.html">Contacts</a>
+      </div>
+    </div>
+
+    <span class="separator d-none d-md-inline">|</span>
+    <div class="dropdown">
+      <a class="dropdown-toggle active-page" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        About Us
+      </a>
+      <div class="dropdown-menu">
+        <a href="mapa-alerto.html">Mapa-Alerto</a>
+        <a href="university-profile.html">University Profile</a>
+      </div>
+    </div>
+
+    <span class="separator d-none d-md-inline">|</span>
+    <a href="events.html">Events</a>
+
+    <span class="separator d-none d-md-inline">|</span>
+    <a href="faq.html">FAQs</a>
+  </div>
+
+  <div class="about-content">
+    <h1 style="font-size: 3em; text-align: center;" data-aos="fade-down" data-aos-delay="50">Viva Pirata!</h1>
+    <p data-aos="fade-down" data-aos-delay="100">
+      A young and thriving university, LPU Cavite was established in 2008.
+      Within a few years, the university immediately gained global reach. Our
+      culture of collaboration sparks discoveries that advance society and
+      drive economic impact. We are dedicated to first-rate education while
+      making groundbreaking discoveries. Our students are integral parts in
+      our pursuit of nation building.
+    </p>
+    <p data-aos="fade-down" data-aos-delay="150">
+      Our 16-hectare campus is located in the heart of Cavite, a city known as
+      the "Land of the Brave", rich in its history, landmarks, museums, and
+      facilities for leisure. Our faculty are leaders in their fields,
+      passionate about teaching, and pushing the boundaries of knowledge. With
+      an average class size of 40, we cultivate a rich student-faculty
+      relationship which remains common and collaborative.
+    </p>
+    <p data-aos="fade-down" data-aos-delay="200">
+      Our Alumni make us proud. They are leaders and innovators in the many
+      professions and pursuits shaping society today. Lyceans are proud
+      contributors to the different sectors of our modern world, in
+      hospitality, law, nursing, business, engineering, and fine arts. We
+      invite you to explore your future opportunities with us through truth
+      and fortitude, for God and country.
+    </p>
+
+    <div class="container-fluid mt-5 pt-4">
+  <div class="row">
+    <div class="col-sm-4 mb-4" data-aos="fade-down" data-aos-delay="200">
+      <div class="first text-center p-3 p-md-3 h-100" style="border: 1px solid #ab2323;">
+        <img src="/assets/star.PNG" alt="Star Icon" class="img-fluid mb-3">
+        <p class="history-note">Philippine Quality Award for Commitment to Quality Management.
+        A certified ISO 9001:2015 and 14001
+        Environment Management System by
+        Societe General de Surveillance.</p>
+      </div>
+    </div>
+    <div class="col-sm-4 mb-4" data-aos="fade-down" data-aos-delay="250">
+      <div class="second text-center p-3 p-md-3 h-100" style="border: 1px solid #ab2323;">
+        <img src="/assets/house.PNG" alt="House Icon" class="img-fluid mb-3">
+        <p class="history-note">LPU is one of the 71 universities in the
+        country to be granted Autonomous Status by the Commission on Higher Education.</p>
+      </div>
+    </div>
+    <div class="col-sm-4 mb-4" data-aos="fade-down" data-aos-delay="300">
+      <div class="third text-center p-3 p-md-3 h-100" style="border: 1px solid #ab2323;">
+        <img src="/assets/statue.PNG" alt="Statue Icon" class="img-fluid mb-3">
+        <p class="history-note">Inspired by the ideals of its founder, former Philippine President, Dr. Jose P. Laurel, LPU is committed to the advancement of his
+        philosophy and values: Veritas et Fortitudo"
+        (Truth and Fortitude) and "Pro Deo et Patria"
+        (for God and country).</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <div>
+      <h2  data-aos="fade-down" data-aos-delay="150">Our History</h2>
+      <p class="history-note" style="font-size: 16px" data-aos="fade-down" data-aos-delay="200">
+        Founded in 1952, LPU continues its drive towards academic excellence and
+        quality education with International Accreditations as the First
+        University in the Philippines to be granted Full International
+        Accreditation for Hotel & Restaurant Management and Tourism
+        (Undergraduate and Graduate Programs) by International Centre of
+        Excellence in Tourism and Hospitality Education (THE-ICE) and
+        Philippines' First Educational Institution certified by
+        Investors-in-People International with the Silver Award.
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-links">
+        <div class="footer-column">
+          <h2 class="fw-semibold">About Us</h2>
+          <ul>
+            <li><a href="mapa-alerto.html">Mapa-Alerto</a></li>
+            <li><a href="university-profile.html">University Profile</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h2 class="fw-semibold">Events</h2>
+          <ul>
+            <li><a href="events.html">Seminar and Training</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h2 class="fw-semibold">COECSA Map</h2>
+          <ul>
+            <li><a href="coecsa.html">COECSA Building</a></li>
+            <li><a href="groundfloor.html">Ground Floor</a></li>
+            <li><a href="2nd-floor.html">2nd Floor</a></li>
+            <li><a href="3rd-floor.html">3rd Floor</a></li>
+            <li><a href="5th-floor.html">5th Floor</a></li>
+            <li><a href="6th-floor.html">6th Floor</a></li>
+            <li><a href="7th-floor.html">7th Floor</a></li>
+            <li><a href="safe-zone.html">Safe Zone</a></li>
+
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h2 class="fw-semibold">Emergency Guide</h2>
+          <ul>
+            <li><a href="what-to-do.html">What to do</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+          </ul>
+          <h2 style="margin-top: 30px" class="fw-semibold">FAQs</h2>
+          <ul>
+            <li><a href="faq.html">Security</a></li>
+            <li><a href="faq.html">Map</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap + Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

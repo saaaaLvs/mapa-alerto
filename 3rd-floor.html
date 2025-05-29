@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>3rd-floor - Mapa-Alerto</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="icon" type="image/png" href="assets/LPU-Logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body style="background-color: #fff">
+    <!-- Loader -->
+    <div id="loader-overlay">
+        <img src="assets/loading-screen.gif" alt="Loading..." style="max-width: 100%; padding: 0; margin: 0" />
+        <p id="loader-message">Getting things ready, please wait...</p>
+    </div>
+
+    <!-- Mobile Search Container (Fixed position overlay) -->
+    <div class="mobile-search-container" id="mobileSearchContainer">
+        <div class="mobile-search-wrapper">
+            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search pages..." autocomplete="off">
+            <i class="bi bi-x-lg mobile-search-close" id="mobileSearchClose"></i>
+            <div class="search-results" id="mobileSearchResults"></div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid">
+            <div class="d-flex flex-column flex-md-row align-items-center justify-content-between w-100">
+                <!-- Logo + Toggler + Mobile Search Icon -->
+                <div class="d-flex align-items-center">
+                    <button class="navbar-toggler me-2" type="button" onclick="toggleMenu()">
+                        <i class="bi bi-list"></i>
+                    </button>
+                    <a class="navbar-brand me-2" href="index.html">
+                        <img src="banner-desktop.png" alt="LPU Logo" class="logo-img img-fluid" />
+                    </a>
+                    <!-- Mobile Search Button -->
+                    <button class="mobile-search-btn" id="mobileSearchBtn">
+                        <i class="bi bi-search text-white"></i>
+                    </button>
+                </div>
+
+                <!-- Desktop Search Bar -->
+                <div class="navbar-nav-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search pages..." autocomplete="off">
+                        <i class="bi bi-search search-icon" id="searchIcon"></i>
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hidden Nav Links -->
+    <div class="top-links" id="navLinks">
+        <div class="dropdown">
+            <a class="dropdown-toggle" style="cursor: default">COECSA Map</a>
+            <div class="dropdown-menu">
+                <a href="coecsa.html">COECSA Building</a>
+                <a href="groundfloor.html">Ground Floor</a>
+                <a href="2nd-floor.html">2nd Floor</a>
+                <a href="3rd-floor.html">3rd Floor</a>
+                <a href="5th-floor.html">5th Floor</a>
+                <a href="6th-floor.html">6th Floor</a>
+                <a href="7th-floor.html">7th Floor</a>
+                <a href="safe-zone.html">Safe Zone</a>
+            </div>
+        </div>
+
+        <span class="separator d-none d-md-inline">|</span>
+        <div class="dropdown">
+            <a class="dropdown-toggle" style="cursor: default">Guidelines</a>
+            <div class="dropdown-menu">
+                <a href="what-to-do.html">What To Do</a>
+                <a href="contacts.html">Contacts</a>
+            </div>
+        </div>
+
+        <span class="separator d-none d-md-inline">|</span>
+        <div class="dropdown">
+            <a href="" class="dropdown-toggle" style="cursor: pointer" onclick="event.preventDefault()">About Us</a>
+            <div class="dropdown-menu">
+                <a href="mapa-alerto.html">Mapa-Alerto</a>
+                <a href="university-profile.html">University Profile</a>
+            </div>
+        </div>
+
+        <span class="separator d-none d-md-inline">|</span>
+        <a href="events.html">Events</a>
+
+        <span class="separator d-none d-md-inline">|</span>
+        <a href="faq.html">FAQs</a>
+    </div>
+
+    <section class="building-section container-fluid py-5 bg-white">
+        <div class="row align-items-start gap-4" data-aos="zoom-in-down" data-aos-duration="800">
+            <!-- Building Image -->
+            <div class="col-md-8 mb-4 mb-md-0">
+                <picture>
+                    <!-- 👇 MOBILE image -->
+                    <source srcset="./assets/floors/mob/Mobile COECSA 3RD FLOOR.png" media="(max-width: 767px)">
+                    <!-- 👇 DESKTOP fallback image -->
+                    <img id="mainImage" src="./assets/floors/COECSA 3RD FLOOR.png" 
+                        alt="3rd floor image" class="building-image" 
+                        style="cursor: zoom-in;" 
+                        data-bs-toggle="modal" data-bs-target="#imageModal" />
+                </picture>
+            </div>
+
+            <!-- Right Text -->
+            <div class="col-md-3 text-center text-md-start">
+                <h2 class="fw-bold fs-1">
+                    3rd<br /><small class="fw-normal">Floor</small>
+                </h2>
+                <div class="floor-list mt-3 fs-5">
+                    <div class="row g-2">
+                        <div class="col-6 d-grid gap-2">
+                            <a href="safe-zone.html">Safe Zone</a>
+                            <a href="6th-floor.html">6th Floor</a>
+                            <a href="7th-floor.html">7th Floor</a>
+                            <a href="5th-floor.html">5th Floor</a>
+                            <a href="3rd-floor.html">3rd Floor</a>
+                            <a href="2nd-floor.html">2nd Floor</a>
+                            <a href="groundfloor.html">Ground Floor</a>
+                        </div>
+                        <div class="col-6 d-grid gap-2">
+                            <div class="dropdown">
+                                <button class="btn text-white dropdown-toggle w-100" type="button" id="doaDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8b0000;">
+                                    Select a destination
+                                </button>
+                                <ul class="dropdown-menu w-100 no-active-bg bg-white" aria-labelledby="doaDropdownBtn" style="font-size: 0.85rem;">
+                                    <li><button class="dropdown-item no-active-bg" id="c304">C304</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="doa">DOA/DCS Faculty</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="elevatorLobby">Elevator Lobby</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c303">C303</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c302">C302</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c301">C301</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="lockerArea">Locker Area</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="aux">AUX</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="ee">E.E</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStair">Fire Exit Stair</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c305">C305</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c306">C306</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c307">C307</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c308">C308</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="cfadDeansOffice">CFAD Deans Office</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="reception">Reception</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="cfadFacultyRoom">CFAD Faculty Room</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStation">Fire Exit Station</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Description -->
+    <div class="footer-bar px-3 px-md-5 py-md-4 py-3 text-justify">
+        Click on the floors to automatically open the Evacuation Thematic Map for
+        the COECSA Building at LPU Cavite. The map will provide detailed
+        evacuation routes and safety information to help you navigate emergency
+        situations.
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h2 class="fw-semibold">About Us</h2>
+                    <ul>
+                        <li><a href="mapa-alerto.html">Mapa-Alerto</a></li>
+                        <li><a href="university-profile.html">University Profile</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h2 class="fw-semibold">Events</h2>
+                    <ul>
+                        <li><a href="events.html">Seminar and Training</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h2 class="fw-semibold">COECSA Map</h2>
+                    <ul>
+                        <li><a href="coecsa.html">COECSA Building</a></li>
+                        <li><a href="groundfloor.html">Ground Floor</a></li>
+                        <li><a href="2nd-floor.html">2nd Floor</a></li>
+                        <li><a href="3rd-floor.html">3rd Floor</a></li>
+                        <li><a href="5th-floor.html">5th Floor</a></li>
+                        <li><a href="6th-floor.html">6th Floor</a></li>
+                        <li><a href="7th-floor.html">7th Floor</a></li>
+                        <li><a href="safe-zone.html">Safe Zone</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h2 class="fw-semibold">Emergency Guide</h2>
+                    <ul>
+                        <li><a href="what-to-do.html">What to do</a></li>
+                        <li><a href="contacts.html">Contacts</a></li>
+                    </ul>
+                    <h2 style="margin-top: 30px" class="fw-semibold">FAQs</h2>
+                    <ul>
+                        <li><a href="faq.html">Security</a></li>
+                        <li><a href="faq.html">Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-custom modal-dialog-centered">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-body text-center p-0">
+                    <img id="modalImage" class="img-fluid rounded" alt="Zoomed 3rd Floor" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        const modalImage = document.getElementById("modalImage");
+        const buildingImage = document.getElementById("mainImage");
+
+        function updateImages() {
+            const isMobile = window.innerWidth <= 767;
+            const mobileSrc = "./assets/floors/mob/Mobile COECSA 3RD FLOOR.png";
+            const desktopSrc = "./assets/floors/COECSA 3RD FLOOR.png";
+
+            // Set the modal image source
+            modalImage.src = isMobile ? mobileSrc : desktopSrc;
+
+            // Update the main image for mobile/desktop
+            buildingImage.src = isMobile ? mobileSrc : desktopSrc;
+        }
+
+        window.addEventListener("load", updateImages);
+        window.addEventListener("resize", updateImages);
+
+        buildingImage.addEventListener("click", () => {
+            updateImages();
+        });
+
+
+        //  3rd Floor Destinations
+        const c304Btn = document.getElementById('c304');
+        const doaBtn = document.getElementById('doa');
+        const elevatorLobbyBtn = document.getElementById('elevatorLobby');
+        const c303Btn = document.getElementById('c303');
+        const c302Btn = document.getElementById('c302');
+        const c301Btn = document.getElementById('c301');
+        const lockerAreaBtn = document.getElementById('lockerArea');
+        const auxBtn = document.getElementById('aux');
+        const eeBtn = document.getElementById('ee');
+        const fireExitStairBtn = document.getElementById('fireExitStair');
+        const c305Btn = document.getElementById('c305');
+        const c306Btn = document.getElementById('c306');
+        const c307Btn = document.getElementById('c307');
+        const c308Btn = document.getElementById('c308');
+        const cfadDeansOfficeBtn = document.getElementById('cfadDeansOffice');
+        const receptionBtn = document.getElementById('reception');
+        const cfadFacultyRoomBtn = document.getElementById('cfadFacultyRoom');
+        const fireExitStationBtn = document.getElementById('fireExitStation');
+    
+        const mainImage = document.getElementById('mainImage');
+
+        // Store default image sources
+        const defaultDesktop = "./assets/floors/COECSA 3RD FLOOR.png";
+        const defaultMobile = "./assets/floors/mob/Mobile COECSA 3RD FLOOR.png";
+        const animC304Desktop = "./assets/animations/1.gif";
+        const animC304Mobile = "./assets/animations/mob/1.gif";
+        const animDOADesktop = "./assets/animations/2.gif";
+        const animDOAMobile = "./assets/animations/mob/2.gif";
+        const animElevatorLobbyDesktop = "./assets/animations/3.gif";
+        const animElevatorLobbyMobile = "./assets/animations/mob/3.gif";
+        const animC303Desktop = "./assets/animations/4.gif";
+        const animC303Mobile = "./assets/animations/mob/4.gif";
+        const animC302Desktop = "./assets/animations/5.gif";
+        const animC302Mobile = "./assets/animations/mob/5.gif";
+        const animC301Desktop = "./assets/animations/6.gif";
+        const animC301Mobile = "./assets/animations/mob/6.gif";
+        const animLockerAreaDesktop = "./assets/animations/7.gif";
+        const animLockerAreaMobile = "./assets/animations/mob/7.gif";
+        const animAuxDesktop = "./assets/animations/8.gif";
+        const animAuxMobile = "./assets/animations/mob/8.gif";
+        const animEEDesktop = "./assets/animations/9.gif";
+        const animEEMobile = "./assets/animations/mob/9.gif";
+        const animFireExitStairDesktop = "./assets/animations/10.gif";
+        const animFireExitStairMobile = "./assets/animations/mob/10.gif";
+        const animC305Desktop = "./assets/animations/11.gif";
+        const animC305Mobile = "./assets/animations/mob/11.gif";
+        const animC306Desktop = "./assets/animations/12.gif";
+        const animC306Mobile = "./assets/animations/mob/12.gif";
+        const animC307Desktop = "./assets/animations/13.gif";
+        const animC307Mobile = "./assets/animations/mob/13.gif";
+        const animC308Desktop = "./assets/animations/14.gif";
+        const animC308Mobile = "./assets/animations/mob/14.gif";
+        const animCFADDeansOfficeDesktop = "./assets/animations/15.gif";
+        const animCFADDeansOfficeMobile = "./assets/animations/mob/15.gif";
+        const animReceptionDesktop = "./assets/animations/16.gif";
+        const animReceptionMobile = "./assets/animations/mob/16.gif";
+        const animCFADFacultyRoomDesktop = "./assets/animations/17.gif";
+        const animCFADFacultyRoomMobile = "./assets/animations/mob/17.gif";
+        const animFireExitStationDesktop = "./assets/animations/18.gif";
+        const animFireExitStationMobile = "./assets/animations/mob/18.gif";
+
+        let animationTimeout = null;
+
+        function isMobile() {
+            return window.innerWidth <= 767;
+        }
+
+        // Ensure the GIF and PNG have the same size and aspect ratio
+        function setImageStyle() {
+            const isGif = mainImage.src.endsWith('.gif');
+            mainImage.style.maxWidth = "100%";
+            mainImage.style.height = "auto";
+            if (isGif) {
+            mainImage.style.transform = "scale(0.975) translateY(-24px) translateX(0.65px)";
+            // Apply filter to make GIF background look more white
+            mainImage.style.filter = " contrast(1.05)";
+            } else {
+            mainImage.style.transform = "none";
+            mainImage.style.filter = "none";
+            mainImage.style.background = "none";
+            }
+        }
+
+        function showAnimation(animDesktop, animMobile) {
+            // Reset previous timeout if exists
+            if (animationTimeout) {
+                clearTimeout(animationTimeout);
+                animationTimeout = null;
+            }
+            mainImage.src = isMobile() ? animMobile : animDesktop;
+            setImageStyle();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            animationTimeout = setTimeout(() => {
+                mainImage.src = isMobile() ? defaultMobile : defaultDesktop;
+                setImageStyle();
+                animationTimeout = null;
+            }, 5000);
+        }
+
+        c304Btn.addEventListener('click', function () {
+            showAnimation(animC304Desktop, animC304Mobile);
+        });
+
+        doaBtn.addEventListener('click', function () {
+            showAnimation(animDOADesktop, animDOAMobile);
+        });
+
+        elevatorLobbyBtn.addEventListener('click', function () {
+            showAnimation(animElevatorLobbyDesktop, animElevatorLobbyMobile);
+        });
+
+        c303Btn.addEventListener('click', function () {
+            showAnimation(animC303Desktop, animC303Mobile);
+        });
+
+        c302Btn.addEventListener('click', function () {
+            showAnimation(animC302Desktop, animC302Mobile);
+        });
+
+        c301Btn.addEventListener('click', function () {
+            showAnimation(animC301Desktop, animC301Mobile);
+        });
+
+        lockerAreaBtn.addEventListener('click', function () {
+            showAnimation(animLockerAreaDesktop, animLockerAreaMobile);
+        });
+
+        auxBtn.addEventListener('click', function () {
+            showAnimation(animAuxDesktop, animAuxMobile);
+        });
+
+        eeBtn.addEventListener('click', function () {
+            showAnimation(animEEDesktop, animEEMobile);
+        });
+
+        fireExitStairBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStairDesktop, animFireExitStairMobile);
+        });
+
+        c305Btn.addEventListener('click', function () {
+            showAnimation(animC305Desktop, animC305Mobile);
+        });
+
+        c306Btn.addEventListener('click', function () {
+            showAnimation(animC306Desktop, animC306Mobile);
+        });
+
+        c307Btn.addEventListener('click', function () {
+            showAnimation(animC307Desktop, animC307Mobile);
+        });
+
+        c308Btn.addEventListener('click', function () {
+            showAnimation(animC308Desktop, animC308Mobile);
+        });
+
+        cfadDeansOfficeBtn.addEventListener('click', function () {
+            showAnimation(animCFADDeansOfficeDesktop, animCFADDeansOfficeMobile);
+        });
+
+        receptionBtn.addEventListener('click', function () {
+            showAnimation(animReceptionDesktop, animReceptionMobile);
+        });
+
+        cfadFacultyRoomBtn.addEventListener('click', function () {
+            showAnimation(animCFADFacultyRoomDesktop, animCFADFacultyRoomMobile);
+        });
+
+        fireExitStationBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStationDesktop, animFireExitStationMobile);
+        });
+
+
+        window.addEventListener('DOMContentLoaded', setImageStyle);
+        mainImage.addEventListener('load', setImageStyle);
+    </script>
+</body>
+
+</html>
