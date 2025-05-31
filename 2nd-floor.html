@@ -103,7 +103,7 @@
     </div>
 
     <section class="building-section container-fluid py-5 bg-white">
-        <div class="row align-items-center gap-4" data-aos="zoom-in-down" data-aos-duration="800">
+        <div class="row align-items-start gap-4" data-aos="zoom-in-down" data-aos-duration="800">
             <!-- Building Image -->
             <div class="col-md-8 mb-4 mb-md-0">
                 <picture>
@@ -122,13 +122,51 @@
                     2nd<br /><small class="fw-normal">Floor</small>
                 </h2>
                 <div class="floor-list mt-3 fs-5">
-                    <a href="safe-zone.html">Safe Zone</a>
-                    <a href="7th-floor.html">7th Floor</a>
-                    <a href="6th-floor.html">6th Floor</a>
-                    <a href="5th-floor.html">5th Floor</a>
-                    <a href="3rd-floor.html">3rd Floor</a>
-                    <a href="2nd-floor.html">2nd Floor</a>
-                    <a href="groundfloor.html">Ground Floor</a>
+                    <div class="row g-2">
+                        <div class="col-6 d-grid gap-2">
+                            <a href="safe-zone.html">Safe Zone</a>
+                            <a href="7th-floor.html">7th Floor</a>
+                            <a href="6th-floor.html">6th Floor</a>
+                            <a href="5th-floor.html">5th Floor</a>
+                            <a href="3rd-floor.html">3rd Floor</a>
+                            <a href="2nd-floor.html">2nd Floor</a>
+                            <a href="groundfloor.html">Ground Floor</a>
+                        </div>
+                        <div class="col-6 d-grid gap-2">
+                            <div class="dropdown">
+                                <button class="btn text-white dropdown-toggle dropbtn" type="button" id="doaDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8b0000;">
+                                    Select a destination
+                                </button>
+                                <ul class="dropdown-menu w-100 no-active-bg bg-white" aria-labelledby="doaDropdownBtn" style="font-size: 0.85rem;" id="scrollable">
+                                    <li><button class="dropdown-item no-active-bg" id="conferenceRoom">Conference Room</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="gsDeansOffice">GS Dean's Office</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="reception1">Reception 1</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="secretarysOffice">Secretary's Office</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="adminsOffice">Admin's Office</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="elevatorLobby">Elevator Lobby</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="ictd">ICTD</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="reception2">Reception 2</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="serverRoom">Server Room</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c202">C202</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c201">C201</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="lockerArea">Locker Area</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="aux">AUX</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="ee">E.E</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStair">Fire Exit Stair</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c203">C203</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c204">C204</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="accreditationRoom">Accrediation Room</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="doeFacultyRoom">DOE Faculty Room</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="dcsChair">DCS Chair</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="reception3">Reception 3</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="defenseRoom1">Defense Room 1</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="coecsaDeansOffice">COECSA Dean's Office</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="defenseRoom2">Defense Room 2</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStation">Fire Exit Station</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -226,6 +264,210 @@
         buildingImage.addEventListener("click", () => {
             updateImages();
         });
+
+
+        //  3rd Floor Destinations
+        const conferenceRoomBtn = document.getElementById('conferenceRoom');
+        const gsDeansOfficeBtn = document.getElementById('gsDeansOffice');
+        const reception1Btn = document.getElementById('reception1');
+        const secretarysOfficeBtn = document.getElementById('secretarysOffice');
+        const adminsOfficeBtn = document.getElementById('adminsOffice');
+        const elevatorLobbyBtn = document.getElementById('elevatorLobby');
+        const ictdBtn = document.getElementById('ictd');
+        const reception2Btn = document.getElementById('reception2');
+        const serverRoomBtn = document.getElementById('serverRoom');
+        const c202Btn = document.getElementById('c202');
+        const c201Btn = document.getElementById('c201');
+        const lockerAreaBtn = document.getElementById('lockerArea');
+        const auxBtn = document.getElementById('aux');
+        const eeBtn = document.getElementById('ee');
+        const fireExitStairBtn = document.getElementById('fireExitStair');
+        const c203Btn = document.getElementById('c203');
+        const c204Btn = document.getElementById('c204');
+        const accreditationRoomBtn = document.getElementById('accreditationRoom');
+        const doeFacultyRoomBtn = document.getElementById('doeFacultyRoom');
+        const dcsChairBtn = document.getElementById('dcsChair');
+        const reception3Btn = document.getElementById('reception3');
+        const defenseRoom1Btn = document.getElementById('defenseRoom1');
+        const coecsaDeansOfficeBtn = document.getElementById('coecsaDeansOffice');
+        const defenseRoom2Btn = document.getElementById('defenseRoom2');
+        const fireExitStationBtn = document.getElementById('fireExitStation');
+
+    
+        const mainImage = document.getElementById('mainImage');
+
+        // Store default image sources
+        const defaultDesktop = "./assets/floors/COECSA 2ND FLOOR.png";
+        const defaultMobile = "./assets/floors/mob/Mobile COECSA 2ND FLOOR.png";
+        const animConferenceRoomDesktop = "./assets/animations/web/2ndFloor/1.gif";
+        const animConferenceRoomMobile = "./assets/animations/mob/2ndFloor/1.gif";
+        const animGsDeansOfficeDesktop = "./assets/animations/web/2ndFloor/2.gif";
+        const animGsDeansOfficeMobile = "./assets/animations/mob/2ndFloor/2.gif";
+        const animReception1Desktop = "./assets/animations/web/2ndFloor/3.gif";
+        const animReception1Mobile = "./assets/animations/mob/2ndFloor/3.gif";
+        const animSecretarysOfficeDesktop = "./assets/animations/web/2ndFloor/4.gif";
+        const animSecretarysOfficeMobile = "./assets/animations/mob/2ndFloor/4.gif";
+        const animAdminsOfficeDesktop = "./assets/animations/web/2ndFloor/5.gif";
+        const animAdminsOfficeMobile = "./assets/animations/mob/2ndFloor/5.gif";
+        const animElevatorLobbyDesktop = "./assets/animations/web/2ndFloor/6.gif"; 
+        const animElevatorLobbyMobile = "./assets/animations/mob/2ndFloor/6.gif";
+        const animIctdDesktop = "./assets/animations/web/2ndFloor/7.gif";
+        const animIctdMobile = "./assets/animations/mob/2ndFloor/7.gif";
+        const animReception2Desktop = "./assets/animations/web/2ndFloor/8.gif";
+        const animReception2Mobile = "./assets/animations/mob/2ndFloor/8.gif";
+        const animServerRoomDesktop = "./assets/animations/web/2ndFloor/9.gif";
+        const animServerRoomMobile = "./assets/animations/mob/2ndFloor/9.gif";
+        const animC202Desktop = "./assets/animations/web/2ndFloor/10.gif";
+        const animC202Mobile = "./assets/animations/mob/2ndFloor/10.gif";
+        const animC201Desktop = "./assets/animations/web/2ndFloor/11.gif";
+        const animC201Mobile = "./assets/animations/mob/2ndFloor/11.gif";
+        const animLockerAreaDesktop = "./assets/animations/web/2ndFloor/12.gif";
+        const animLockerAreaMobile = "./assets/animations/mob/2ndFloor/12.gif";
+        const animAuxDesktop = "./assets/animations/web/2ndFloor/13.gif";
+        const animAuxMobile = "./assets/animations/mob/2ndFloor/13.gif";
+        const animEeDesktop = "./assets/animations/web/2ndFloor/14.gif";
+        const animEeMobile = "./assets/animations/mob/2ndFloor/14.gif";
+        const animFireExitStairDesktop = "./assets/animations/web/2ndFloor/15.gif";
+        const animFireExitStairMobile = "./assets/animations/mob/2ndFloor/15.gif";
+        const animC203Desktop = "./assets/animations/web/2ndFloor/16.gif";
+        const animC203Mobile = "./assets/animations/mob/2ndFloor/16.gif";
+        const animC204Desktop = "./assets/animations/web/2ndFloor/17.gif";
+        const animC204Mobile = "./assets/animations/mob/2ndFloor/17.gif";
+        const animAccreditationRoomDesktop = "./assets/animations/web/2ndFloor/18.gif";
+        const animAccreditationRoomMobile = "./assets/animations/mob/2ndFloor/18.gif";
+        const animDoeFacultyRoomDesktop = "./assets/animations/web/2ndFloor/19.gif";
+        const animDoeFacultyRoomMobile = "./assets/animations/mob/2ndFloor/19.gif";
+        const animDcsChairDesktop = "./assets/animations/web/2ndFloor/20.gif";
+        const animDcsChairMobile = "./assets/animations/mob/2ndFloor/20.gif";
+        const animReception3Desktop = "./assets/animations/web/2ndFloor/21.gif";
+        const animReception3Mobile = "./assets/animations/mob/2ndFloor/21.gif";
+        const animDefenseRoom1Desktop = "./assets/animations/web/2ndFloor/22.gif";
+        const animDefenseRoom1Mobile = "./assets/animations/mob/2ndFloor/22.gif";
+        const animCoecsaDeansOfficeDesktop = "./assets/animations/web/2ndFloor/23.gif";
+        const animCoecsaDeansOfficeMobile = "./assets/animations/mob/2ndFloor/23.gif";
+        const animDefenseRoom2Desktop = "./assets/animations/web/2ndFloor/24.gif";
+        const animDefenseRoom2Mobile = "./assets/animations/mob/2ndFloor/24.gif";
+        const animFireExitStationDesktop = "./assets/animations/web/2ndFloor/25.gif";
+        const animFireExitStationMobile = "./assets/animations/mob/2ndFloor/25.gif";
+
+        
+        let animationTimeout = null;
+
+        function isMobile() {
+            return window.innerWidth <= 767;
+        }
+
+        // Ensure the GIF and PNG have the same size and aspect ratio
+        function setImageStyle() {
+            const isGif = mainImage.src.endsWith('.gif');
+            mainImage.style.maxWidth = "100%";
+            mainImage.style.height = "auto";
+            if (isGif) {
+            mainImage.style.transform = "scale(0.975) translateY(-24px) translateX(0.65px)";
+            // Apply filter to make GIF background look more white
+            mainImage.style.filter = " contrast(1.05)";
+            } else {
+            mainImage.style.transform = "none";
+            mainImage.style.filter = "none";
+            mainImage.style.background = "none";
+            }
+        }
+
+        function showAnimation(animDesktop, animMobile) {
+            // Reset previous timeout if exists
+            if (animationTimeout) {
+                clearTimeout(animationTimeout);
+                animationTimeout = null;
+            }
+            mainImage.src = isMobile() ? animMobile : animDesktop;
+            setImageStyle();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            animationTimeout = setTimeout(() => {
+                mainImage.src = isMobile() ? defaultMobile : defaultDesktop;
+                setImageStyle();
+                animationTimeout = null;
+            }, 5000);
+        }
+
+        conferenceRoomBtn.addEventListener('click', function () {
+            showAnimation(animConferenceRoomDesktop, animConferenceRoomMobile);
+        });
+        gsDeansOfficeBtn.addEventListener('click', function () {
+            showAnimation(animGsDeansOfficeDesktop, animGsDeansOfficeMobile);
+        });
+        reception1Btn.addEventListener('click', function () {
+            showAnimation(animReception1Desktop, animReception1Mobile);
+        });
+        secretarysOfficeBtn.addEventListener('click', function () {
+            showAnimation(animSecretarysOfficeDesktop, animSecretarysOfficeMobile);
+        });
+        elevatorLobbyBtn.addEventListener('click', function () {
+            showAnimation(animElevatorLobbyDesktop, animElevatorLobbyMobile);
+        });
+        adminsOfficeBtn.addEventListener('click', function () {
+            showAnimation(animAdminsOfficeDesktop, animAdminsOfficeMobile);
+        });
+        ictdBtn.addEventListener('click', function () {
+            showAnimation(animIctdDesktop, animIctdMobile);
+        });
+        reception2Btn.addEventListener('click', function () {
+            showAnimation(animReception2Desktop, animReception2Mobile);
+        });
+        serverRoomBtn.addEventListener('click', function () {
+            showAnimation(animServerRoomDesktop, animServerRoomMobile);
+        });
+        c202Btn.addEventListener('click', function () {
+            showAnimation(animC202Desktop, animC202Mobile);
+        });
+        c201Btn.addEventListener('click', function () {
+            showAnimation(animC201Desktop, animC201Mobile);
+        });
+        lockerAreaBtn.addEventListener('click', function () {
+            showAnimation(animLockerAreaDesktop, animLockerAreaMobile);
+        });
+        auxBtn.addEventListener('click', function () {
+            showAnimation(animAuxDesktop, animAuxMobile);
+        });
+        eeBtn.addEventListener('click', function () {
+            showAnimation(animEeDesktop, animEeMobile);
+        });
+        fireExitStairBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStairDesktop, animFireExitStairMobile);
+        });
+        c203Btn.addEventListener('click', function () {
+            showAnimation(animC203Desktop, animC203Mobile);
+        });
+        c204Btn.addEventListener('click', function () {
+            showAnimation(animC204Desktop, animC204Mobile);
+        });
+        accreditationRoomBtn.addEventListener('click', function () {
+            showAnimation(animAccreditationRoomDesktop, animAccreditationRoomMobile);
+        });
+        doeFacultyRoomBtn.addEventListener('click', function () {
+            showAnimation(animDoeFacultyRoomDesktop, animDoeFacultyRoomMobile);
+        });
+        dcsChairBtn.addEventListener('click', function () {
+            showAnimation(animDcsChairDesktop, animDcsChairMobile);
+        });
+        reception3Btn.addEventListener('click', function () {
+            showAnimation(animReception3Desktop, animReception3Mobile);
+        });
+        defenseRoom1Btn.addEventListener('click', function () {
+            showAnimation(animDefenseRoom1Desktop, animDefenseRoom1Mobile);
+        });
+        coecsaDeansOfficeBtn.addEventListener('click', function () {
+            showAnimation(animCoecsaDeansOfficeDesktop, animCoecsaDeansOfficeMobile);
+        });
+        defenseRoom2Btn.addEventListener('click', function () {
+            showAnimation(animDefenseRoom2Desktop, animDefenseRoom2Mobile);
+        });
+        fireExitStationBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStationDesktop, animFireExitStationMobile);
+        });
+
+
+        window.addEventListener('DOMContentLoaded', setImageStyle);
+        mainImage.addEventListener('load', setImageStyle);
     </script>
 </body>
 

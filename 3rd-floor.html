@@ -124,8 +124,8 @@
                     <div class="row g-2">
                         <div class="col-6 d-grid gap-2">
                             <a href="safe-zone.html">Safe Zone</a>
-                            <a href="6th-floor.html">6th Floor</a>
                             <a href="7th-floor.html">7th Floor</a>
+                            <a href="6th-floor.html">6th Floor</a>
                             <a href="5th-floor.html">5th Floor</a>
                             <a href="3rd-floor.html">3rd Floor</a>
                             <a href="2nd-floor.html">2nd Floor</a>
@@ -133,10 +133,10 @@
                         </div>
                         <div class="col-6 d-grid gap-2">
                             <div class="dropdown">
-                                <button class="btn text-white dropdown-toggle w-100" type="button" id="doaDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8b0000;">
+                                <button class="btn text-white dropdown-toggle dropbtn" type="button" id="doaDropdownBtn" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8b0000;">
                                     Select a destination
                                 </button>
-                                <ul class="dropdown-menu w-100 no-active-bg bg-white" aria-labelledby="doaDropdownBtn" style="font-size: 0.85rem;">
+                                <ul class="dropdown-menu w-100 no-active-bg bg-white" aria-labelledby="doaDropdownBtn" style="font-size: 0.85rem;" id="scrollable">
                                     <li><button class="dropdown-item no-active-bg" id="c304">C304</button></li>
                                     <li><button class="dropdown-item no-active-bg" id="doa">DOA/DCS Faculty</button></li>
                                     <li><button class="dropdown-item no-active-bg" id="elevatorLobby">Elevator Lobby</button></li>
@@ -283,42 +283,42 @@
         // Store default image sources
         const defaultDesktop = "./assets/floors/COECSA 3RD FLOOR.png";
         const defaultMobile = "./assets/floors/mob/Mobile COECSA 3RD FLOOR.png";
-        const animC304Desktop = "./assets/animations/1.gif";
-        const animC304Mobile = "./assets/animations/mob/1.gif";
-        const animDOADesktop = "./assets/animations/2.gif";
-        const animDOAMobile = "./assets/animations/mob/2.gif";
-        const animElevatorLobbyDesktop = "./assets/animations/3.gif";
-        const animElevatorLobbyMobile = "./assets/animations/mob/3.gif";
-        const animC303Desktop = "./assets/animations/4.gif";
-        const animC303Mobile = "./assets/animations/mob/4.gif";
-        const animC302Desktop = "./assets/animations/5.gif";
-        const animC302Mobile = "./assets/animations/mob/5.gif";
-        const animC301Desktop = "./assets/animations/6.gif";
-        const animC301Mobile = "./assets/animations/mob/6.gif";
-        const animLockerAreaDesktop = "./assets/animations/7.gif";
-        const animLockerAreaMobile = "./assets/animations/mob/7.gif";
-        const animAuxDesktop = "./assets/animations/8.gif";
-        const animAuxMobile = "./assets/animations/mob/8.gif";
-        const animEEDesktop = "./assets/animations/9.gif";
-        const animEEMobile = "./assets/animations/mob/9.gif";
-        const animFireExitStairDesktop = "./assets/animations/10.gif";
-        const animFireExitStairMobile = "./assets/animations/mob/10.gif";
-        const animC305Desktop = "./assets/animations/11.gif";
-        const animC305Mobile = "./assets/animations/mob/11.gif";
-        const animC306Desktop = "./assets/animations/12.gif";
-        const animC306Mobile = "./assets/animations/mob/12.gif";
-        const animC307Desktop = "./assets/animations/13.gif";
-        const animC307Mobile = "./assets/animations/mob/13.gif";
-        const animC308Desktop = "./assets/animations/14.gif";
-        const animC308Mobile = "./assets/animations/mob/14.gif";
-        const animCFADDeansOfficeDesktop = "./assets/animations/15.gif";
-        const animCFADDeansOfficeMobile = "./assets/animations/mob/15.gif";
-        const animReceptionDesktop = "./assets/animations/16.gif";
-        const animReceptionMobile = "./assets/animations/mob/16.gif";
-        const animCFADFacultyRoomDesktop = "./assets/animations/17.gif";
-        const animCFADFacultyRoomMobile = "./assets/animations/mob/17.gif";
-        const animFireExitStationDesktop = "./assets/animations/18.gif";
-        const animFireExitStationMobile = "./assets/animations/mob/18.gif";
+        const animC304Desktop = "./assets/animations/web/3rdFloor/1.gif";
+        const animC304Mobile = "./assets/animations/mob/3rdFloor/1.gif";
+        const animDOADesktop = "./assets/animations/web/3rdFloor/2.gif";
+        const animDOAMobile = "./assets/animations/mob/3rdFloor/2.gif";
+        const animElevatorLobbyDesktop = "./assets/animations/web/3rdFloor/3.gif";
+        const animElevatorLobbyMobile = "./assets/animations/mob/3rdFloor/3.gif";
+        const animC303Desktop = "./assets/animations/web/3rdFloor/4.gif";
+        const animC303Mobile = "./assets/animations/mob/3rdFloor/4.gif";
+        const animC302Desktop = "./assets/animations/web/3rdFloor/5.gif";
+        const animC302Mobile = "./assets/animations/mob/3rdFloor/5.gif";
+        const animC301Desktop = "./assets/animations/web/3rdFloor/6.gif";
+        const animC301Mobile = "./assets/animations/mob/3rdFloor/6.gif";
+        const animLockerAreaDesktop = "./assets/animations/web/3rdFloor/7.gif";
+        const animLockerAreaMobile = "./assets/animations/mob/3rdFloor/7.gif";
+        const animAuxDesktop = "./assets/animations/web/3rdFloor/8.gif";
+        const animAuxMobile = "./assets/animations/mob/3rdFloor/8.gif";
+        const animEEDesktop = "./assets/animations/web/3rdFloor/9.gif";
+        const animEEMobile = "./assets/animations/mob/3rdFloor/9.gif";
+        const animFireExitStairDesktop = "./assets/animations/web/3rdFloor/10.gif";
+        const animFireExitStairMobile = "./assets/animations/mob/3rdFloor/10.gif";
+        const animC305Desktop = "./assets/animations/web/3rdFloor/11.gif";
+        const animC305Mobile = "./assets/animations/mob/3rdFloor/11.gif";
+        const animC306Desktop = "./assets/animations/web/3rdFloor/12.gif";
+        const animC306Mobile = "./assets/animations/mob/3rdFloor/12.gif";
+        const animC307Desktop = "./assets/animations/web/3rdFloor/13.gif";
+        const animC307Mobile = "./assets/animations/mob/3rdFloor/13.gif";
+        const animC308Desktop = "./assets/animations/web/3rdFloor/14.gif";
+        const animC308Mobile = "./assets/animations/mob/3rdFloor/14.gif";
+        const animCFADDeansOfficeDesktop = "./assets/animations/web/3rdFloor/15.gif";
+        const animCFADDeansOfficeMobile = "./assets/animations/mob/3rdFloor/15.gif";
+        const animReceptionDesktop = "./assets/animations/web/3rdFloor/16.gif";
+        const animReceptionMobile = "./assets/animations/mob/3rdFloor/16.gif";
+        const animCFADFacultyRoomDesktop = "./assets/animations/web/3rdFloor/17.gif";
+        const animCFADFacultyRoomMobile = "./assets/animations/mob/3rdFloor/17.gif";
+        const animFireExitStationDesktop = "./assets/animations/web/3rdFloor/18.gif";
+        const animFireExitStationMobile = "./assets/animations/mob/3rdFloor/18.gif";
 
         let animationTimeout = null;
 

@@ -24,7 +24,8 @@
     <!-- Mobile Search Container (Fixed position overlay) -->
     <div class="mobile-search-container" id="mobileSearchContainer">
         <div class="mobile-search-wrapper">
-            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search pages..." autocomplete="off">
+            <input type="text" class="search-input" id="mobileSearchInput" placeholder="Search pages..."
+                autocomplete="off">
             <i class="bi bi-x-lg mobile-search-close" id="mobileSearchClose"></i>
             <div class="search-results" id="mobileSearchResults"></div>
         </div>
@@ -50,7 +51,8 @@
                 <!-- Desktop Search Bar -->
                 <div class="navbar-nav-section">
                     <div class="search-container">
-                        <input type="text" class="search-input" id="searchInput" placeholder="Search pages..." autocomplete="off">
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search pages..."
+                            autocomplete="off">
                         <i class="bi bi-search search-icon" id="searchIcon"></i>
                         <div class="search-results" id="searchResults"></div>
                     </div>
@@ -101,16 +103,16 @@
     </div>
 
     <section class="building-section container-fluid py-5 bg-white">
-        <div class="row align-items-center gap-4" data-aos="zoom-in-down" data-aos-duration="800">
+        <div class="row align-items-start gap-4" data-aos="zoom-in-down" data-aos-duration="800">
             <!-- Building Image -->
             <div class="col-md-8 mb-4 mb-md-0">
                 <picture>
                     <!-- 👇 MOBILE image -->
                     <source srcset="./assets/floors/mob/Mobile COECSA 5TH FLOOR.png" media="(max-width: 767px)">
                     <!-- 👇 DESKTOP fallback image -->
-                    <img id="mainImage" src="./assets/floors/COECSA 5TH FLOOR.png" 
-                        alt="5th floor image" class="building-image" 
-                        style="cursor: zoom-in;" data-bs-toggle="modal" data-bs-target="#imageModal" />
+                    <img id="mainImage" src="./assets/floors/COECSA 5TH FLOOR.png" alt="5th floor image"
+                        class="building-image" style="cursor: zoom-in;" data-bs-toggle="modal"
+                        data-bs-target="#imageModal" />
                 </picture>
             </div>
 
@@ -120,13 +122,44 @@
                     5th<br /><small class="fw-normal">Floor</small>
                 </h2>
                 <div class="floor-list mt-3 fs-5">
-                    <a href="safe-zone.html">Safe Zone</a>
-                    <a href="7th-floor.html">7th Floor</a>
-                    <a href="6th-floor.html">6th Floor</a>
-                    <a href="5th-floor.html">5th Floor</a>
-                    <a href="3rd-floor.html">3rd Floor</a>
-                    <a href="2nd-floor.html">2nd Floor</a>
-                    <a href="groundfloor.html">Ground Floor</a>
+                    <div class="row g-2">
+                        <div class="col-6 d-grid gap-2">
+                            <a href="safe-zone.html">Safe Zone</a>
+                            <a href="7th-floor.html">7th Floor</a>
+                            <a href="6th-floor.html">6th Floor</a>
+                            <a href="5th-floor.html">5th Floor</a>
+                            <a href="3rd-floor.html">3rd Floor</a>
+                            <a href="2nd-floor.html">2nd Floor</a>
+                            <a href="groundfloor.html">Ground Floor</a>
+                        </div>
+                        <div class="col-6 d-grid gap-2">
+                            <div class="dropdown">
+                                <button class="btn text-white dropdown-toggle dropbtn" type="button" id="doaDropdownBtn"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8b0000;">
+                                    Select a destination
+                                </button>
+                                <ul class="dropdown-menu w-100 no-active-bg bg-white"
+                                    aria-labelledby="doaDropdownBtn" style="font-size: 0.85rem;" id="scrollable">
+                                    <li><button class="dropdown-item no-active-bg" id="c504">C504</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c503">C503</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="elevatorLobby">Elevator Lobby</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="coecsaLaboratory">COECSA Lab. Office</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c502">C502</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c501">C501</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="lockerArea">Locker Area</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="aux">AUX</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="ee">E.E</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStair">Fire Exit Stair</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c505">C505</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c506">C506</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c507">C507</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c508">C508</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c509">C509</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStation">Fire Exit Station</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -224,6 +257,158 @@
         buildingImage.addEventListener("click", () => {
             updateImages();
         });
+
+
+        //  3rd Floor Destinations
+        const c504Btn = document.getElementById('c504');
+        const c503Btn = document.getElementById('c503');
+        const elevatorLobbyBtn = document.getElementById('elevatorLobby');
+        const coecsaLaboratoryBtn = document.getElementById('coecsaLaboratory');
+        const c502Btn = document.getElementById('c502');
+        const c501Btn = document.getElementById('c501');
+        const lockerAreaBtn = document.getElementById('lockerArea');
+        const auxBtn = document.getElementById('aux');
+        const eeBtn = document.getElementById('ee');
+        const fireExitStairBtn = document.getElementById('fireExitStair');
+        const c505Btn = document.getElementById('c505');
+        const c506Btn = document.getElementById('c506');
+        const c507Btn = document.getElementById('c507');
+        const c508Btn = document.getElementById('c508');
+        const c509Btn = document.getElementById('c509');
+        const fireExitStationBtn = document.getElementById('fireExitStation');
+        
+
+
+
+        const mainImage = document.getElementById('mainImage');
+
+        // Store default image sources
+        const defaultDesktop = "./assets/floors/COECSA 2ND FLOOR.png";
+        const defaultMobile = "./assets/floors/mob/Mobile COECSA 2ND FLOOR.png";
+        const animC504Desktop = "./assets/animations/web/5thFloor/1.gif";
+        const animC504Mobile = "./assets/animations/mob/5thFloor/1.gif";
+        const animC503Desktop = "./assets/animations/web/5thFloor/2.gif";
+        const animC503Mobile = "./assets/animations/mob/5thFloor/2.gif";
+        const animElevatorLobbyDesktop = "./assets/animations/web/5thFloor/3.gif";
+        const animElevatorLobbyMobile = "./assets/animations/mob/5thFloor/3.gif";
+        const animCoecsaLaboratoryDesktop = "./assets/animations/web/5thFloor/4.gif";
+        const animCoecsaLaboratoryMobile = "./assets/animations/mob/5thFloor/4.gif";
+        const animC502Desktop = "./assets/animations/web/5thFloor/5.gif";
+        const animC502Mobile = "./assets/animations/mob/5thFloor/5.gif";
+        const animC501Desktop = "./assets/animations/web/5thFloor/6.gif";
+        const animC501Mobile = "./assets/animations/mob/5thFloor/6.gif";
+        const animLockerAreaDesktop = "./assets/animations/web/5thFloor/7.gif";
+        const animLockerAreaMobile = "./assets/animations/mob/5thFloor/7.gif";
+        const animAuxDesktop = "./assets/animations/web/5thFloor/8.gif";
+        const animAuxMobile = "./assets/animations/mob/5thFloor/8.gif";
+        const animEEDesktop = "./assets/animations/web/5thFloor/9.gif";
+        const animEEMobile = "./assets/animations/mob/5thFloor/9.gif";
+        const animFireExitStairDesktop = "./assets/animations/web/5thFloor/10.gif";
+        const animFireExitStairMobile = "./assets/animations/mob/5thFloor/10.gif";
+        const animC505Desktop = "./assets/animations/web/5thFloor/11.gif";
+        const animC505Mobile = "./assets/animations/mob/5thFloor/11.gif";
+        const animC506Desktop = "./assets/animations/web/5thFloor/12.gif";
+        const animC506Mobile = "./assets/animations/mob/5thFloor/12.gif";
+        const animC507Desktop = "./assets/animations/web/5thFloor/13.gif";
+        const animC507Mobile = "./assets/animations/mob/5thFloor/13.gif";
+        const animC508Desktop = "./assets/animations/web/5thFloor/14.gif";
+        const animC508Mobile = "./assets/animations/mob/5thFloor/14.gif";
+        const animC509Desktop = "./assets/animations/web/5thFloor/15.gif";
+        const animC509Mobile = "./assets/animations/mob/5thFloor/15.gif";
+        const animFireExitStationDesktop = "./assets/animations/web/5thFloor/16.gif";
+        const animFireExitStationMobile = "./assets/animations/mob/5thFloor/16.gif";
+        
+
+        let animationTimeout = null;
+
+        function isMobile() {
+            return window.innerWidth <= 767;
+        }
+
+        // Ensure the GIF and PNG have the same size and aspect ratio
+        function setImageStyle() {
+            const isGif = mainImage.src.endsWith('.gif');
+            mainImage.style.maxWidth = "100%";
+            mainImage.style.height = "auto";
+            if (isGif) {
+                mainImage.style.transform = "scale(0.975) translateY(-24px) translateX(0.65px)";
+                // Apply filter to make GIF background look more white
+                mainImage.style.filter = " contrast(1.05)";
+            } else {
+                mainImage.style.transform = "none";
+                mainImage.style.filter = "none";
+                mainImage.style.background = "none";
+            }
+        }
+
+        function showAnimation(animDesktop, animMobile) {
+            // Reset previous timeout if exists
+            if (animationTimeout) {
+                clearTimeout(animationTimeout);
+                animationTimeout = null;
+            }
+            mainImage.src = isMobile() ? animMobile : animDesktop;
+            setImageStyle();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            animationTimeout = setTimeout(() => {
+                mainImage.src = isMobile() ? defaultMobile : defaultDesktop;
+                setImageStyle();
+                animationTimeout = null;
+            }, 5000);
+        }
+
+        c504Btn.addEventListener('click', function () {
+            showAnimation(animC504Desktop, animC504Mobile);
+        });
+        c503Btn.addEventListener('click', function () {
+            showAnimation(animC503Desktop, animC503Mobile);
+        });
+        elevatorLobbyBtn.addEventListener('click', function () {
+            showAnimation(animElevatorLobbyDesktop, animElevatorLobbyMobile);
+        });
+        coecsaLaboratoryBtn.addEventListener('click', function () {
+            showAnimation(animCoecsaLaboratoryDesktop, animCoecsaLaboratoryMobile);
+        });
+        c502Btn.addEventListener('click', function () {
+            showAnimation(animC502Desktop, animC502Mobile);
+        });
+        c501Btn.addEventListener('click', function () {
+            showAnimation(animC501Desktop, animC501Mobile);
+        });
+        lockerAreaBtn.addEventListener('click', function () {
+            showAnimation(animLockerAreaDesktop, animLockerAreaMobile);
+        });
+        auxBtn.addEventListener('click', function () {
+            showAnimation(animAuxDesktop, animAuxMobile);
+        });
+        eeBtn.addEventListener('click', function () {
+            showAnimation(animEEDesktop, animEEMobile);
+        });
+        fireExitStairBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStairDesktop, animFireExitStairMobile);
+        });
+        c505Btn.addEventListener('click', function () {
+            showAnimation(animC505Desktop, animC505Mobile);
+        });
+        c506Btn.addEventListener('click', function () {
+            showAnimation(animC506Desktop, animC506Mobile);
+        });
+        c507Btn.addEventListener('click', function () {
+            showAnimation(animC507Desktop, animC507Mobile);
+        });
+        c508Btn.addEventListener('click', function () {
+            showAnimation(animC508Desktop, animC508Mobile);
+        });
+        c509Btn.addEventListener('click', function () {
+            showAnimation(animC509Desktop, animC509Mobile);
+        });
+        fireExitStationBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStationDesktop, animFireExitStationMobile);
+        });
+
+
+        window.addEventListener('DOMContentLoaded', setImageStyle);
+        mainImage.addEventListener('load', setImageStyle);
     </script>
 </body>
 

@@ -101,7 +101,7 @@
     </div>
 
     <section class="building-section container-fluid py-5 bg-white">
-        <div class="row align-items-center gap-4" data-aos="zoom-in-down" data-aos-duration="800">
+        <div class="row align-items-start gap-4" data-aos="zoom-in-down" data-aos-duration="800">
             <!-- Building Image -->
             <div class="col-md-8 mb-4 mb-md-0">
                 <picture>
@@ -120,13 +120,49 @@
                     6th<br /><small class="fw-normal">Floor</small>
                 </h2>
                 <div class="floor-list mt-3 fs-5">
-                    <a href="safe-zone.html">Safe Zone</a>
-                    <a href="7th-floor.html">7th Floor</a>
-                    <a href="6th-floor.html">6th Floor</a>
-                    <a href="5th-floor.html">5th Floor</a>
-                    <a href="3rd-floor.html">3rd Floor</a>
-                    <a href="2nd-floor.html">2nd Floor</a>
-                    <a href="groundfloor.html">Ground Floor</a>
+                    <div class="row g-2">
+                        <div class="col-6 d-grid gap-2">
+                            <a href="safe-zone.html">Safe Zone</a>
+                            <a href="7th-floor.html">7th Floor</a>
+                            <a href="6th-floor.html">6th Floor</a>
+                            <a href="5th-floor.html">5th Floor</a>
+                            <a href="3rd-floor.html">3rd Floor</a>
+                            <a href="2nd-floor.html">2nd Floor</a>
+                            <a href="groundfloor.html">Ground Floor</a>
+                        </div>
+                        <div class="col-6 d-grid gap-2">
+                            <div class="dropdown">
+                                <button class="btn text-white dropdown-toggle dropbtn" type="button" id="doaDropdownBtn"
+                                    data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #8b0000;">
+                                    Select a destination
+                                </button>
+                                <ul class="dropdown-menu w-100 no-active-bg bg-white"
+                                    aria-labelledby="doaDropdownBtn" style="font-size: 0.85rem;" id="scrollable">
+                                    <li><button class="dropdown-item no-active-bg" id="lockerAreaL">Locker Area (L)</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c607">C607</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c606">C606</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c605">C605</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="elevatorLobby">Elevator Lobby</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c604">C604</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c603">C603</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c602">C602</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c601">C601</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="lockerAreaR">Locker Area (R)</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="aux">AUX</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="ee">E.E</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStair">Fire Exit Stair</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c608">C608</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c609">C609</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c610">C610</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c611">C611</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c612">C612</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c613">C613</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="c614">C614</button></li>
+                                    <li><button class="dropdown-item no-active-bg" id="fireExitStation">Fire Exit Station</button></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -224,6 +260,186 @@
         buildingImage.addEventListener("click", () => {
             updateImages();
         });
+
+
+        //  3rd Floor Destinations
+        const lockerAreaLBtn = document.getElementById('lockerAreaL');
+        const c607Btn = document.getElementById('c607');
+        const c606Btn = document.getElementById('c606');
+        const c605Btn = document.getElementById('c605');
+        const elevatorLobbyBtn = document.getElementById('elevatorLobby');
+        const c604Btn = document.getElementById('c604');
+        const c603Btn = document.getElementById('c603');
+        const c602Btn = document.getElementById('c602');
+        const c601Btn = document.getElementById('c601');
+        const lockerAreaRBtn = document.getElementById('lockerAreaR');
+        const auxBtn = document.getElementById('aux');
+        const eeBtn = document.getElementById('ee');
+        const fireExitStairBtn = document.getElementById('fireExitStair');
+        const c608Btn = document.getElementById('c608');
+        const c609Btn = document.getElementById('c609');
+        const c610Btn = document.getElementById('c610');
+        const c611Btn = document.getElementById('c611');
+        const c612Btn = document.getElementById('c612');
+        const c613Btn = document.getElementById('c613');
+        const c614Btn = document.getElementById('c614');
+        const fireExitStationBtn = document.getElementById('fireExitStation');
+
+        const mainImage = document.getElementById('mainImage');
+
+
+        // Store default image sources
+        const defaultDesktop = "./assets/floors/COECSA 6TH FLOOR.png";
+        const defaultMobile = "./assets/floors/mob/Mobile COECSA 6TH FLOOR.png";
+        const animLockerAreaLDesktop = "./assets/animations/web/6thFloor/1.gif";
+        const animLockerAreaLMobile = "./assets/animations/mob/6thFloor/1.gif";
+        const animC607Desktop = "./assets/animations/web/6thFloor/2.gif";
+        const animC607Mobile = "./assets/animations/mob/6thFloor/2.gif";
+        const animC606Desktop = "./assets/animations/web/6thFloor/3.gif";
+        const animC606Mobile = "./assets/animations/mob/6thFloor/3.gif";
+        const animC605Desktop = "./assets/animations/web/6thFloor/4.gif";
+        const animC605Mobile = "./assets/animations/mob/6thFloor/4.gif";
+        const animElevatorLobbyDesktop = "./assets/animations/web/6thFloor/5.gif";
+        const animElevatorLobbyMobile = "./assets/animations/mob/6thFloor/5.gif";
+        const animC604Desktop = "./assets/animations/web/6thFloor/6.gif";
+        const animC604Mobile = "./assets/animations/mob/6thFloor/6.gif";
+        const animC603Desktop = "./assets/animations/web/6thFloor/7.gif";
+        const animC603Mobile = "./assets/animations/mob/6thFloor/7.gif";
+        const animC602Desktop = "./assets/animations/web/6thFloor/8.gif";
+        const animC602Mobile = "./assets/animations/mob/6thFloor/8.gif";
+        const animC601Desktop = "./assets/animations/web/6thFloor/9.gif";
+        const animC601Mobile = "./assets/animations/mob/6thFloor/9.gif";
+        const animLockerAreaRDesktop = "./assets/animations/web/6thFloor/10.gif";
+        const animLockerAreaRMobile = "./assets/animations/mob/6thFloor/10.gif";
+        const animAuxDesktop = "./assets/animations/web/6thFloor/11.gif";
+        const animAuxMobile = "./assets/animations/mob/6thFloor/11.gif";
+        const animEEDesktop = "./assets/animations/web/6thFloor/12.gif";
+        const animEEMobile = "./assets/animations/mob/6thFloor/12.gif";
+        const animFireExitStairDesktop = "./assets/animations/web/6thFloor/13.gif";
+        const animFireExitStairMobile = "./assets/animations/mob/6thFloor/13.gif";
+        const animC608Desktop = "./assets/animations/web/6thFloor/14.gif";
+        const animC608Mobile = "./assets/animations/mob/6thFloor/14.gif";
+        const animC609Desktop = "./assets/animations/web/6thFloor/15.gif";
+        const animC609Mobile = "./assets/animations/mob/6thFloor/15.gif";
+        const animC610Desktop = "./assets/animations/web/6thFloor/16.gif";
+        const animC610Mobile = "./assets/animations/mob/6thFloor/16.gif";
+        const animC611Desktop = "./assets/animations/web/6thFloor/17.gif";
+        const animC611Mobile = "./assets/animations/mob/6thFloor/17.gif";
+        const animC612Desktop = "./assets/animations/web/6thFloor/18.gif";
+        const animC612Mobile = "./assets/animations/mob/6thFloor/18.gif";
+        const animC613Desktop = "./assets/animations/web/6thFloor/19.gif";
+        const animC613Mobile = "./assets/animations/mob/6thFloor/19.gif";
+        const animC614Desktop = "./assets/animations/web/6thFloor/20.gif";
+        const animC614Mobile = "./assets/animations/mob/6thFloor/20.gif";
+        const animFireExitStationDesktop = "./assets/animations/web/6thFloor/21.gif";
+        const animFireExitStationMobile = "./assets/animations/mob/6thFloor/21.gif";
+
+
+        let animationTimeout = null;
+
+        function isMobile() {
+            return window.innerWidth <= 767;
+        }
+
+        // Ensure the GIF and PNG have the same size and aspect ratio
+        function setImageStyle() {
+            const isGif = mainImage.src.endsWith('.gif');
+            mainImage.style.maxWidth = "100%";
+            mainImage.style.height = "auto";
+            if (isGif) {
+                mainImage.style.transform = "scale(0.975) translateY(-24px) translateX(0.65px)";
+                // Apply filter to make GIF background look more white
+                mainImage.style.filter = " contrast(1.05)";
+            } else {
+                mainImage.style.transform = "none";
+                mainImage.style.filter = "none";
+                mainImage.style.background = "none";
+            }
+        }
+
+        function showAnimation(animDesktop, animMobile) {
+            // Reset previous timeout if exists
+            if (animationTimeout) {
+                clearTimeout(animationTimeout);
+                animationTimeout = null;
+            }
+            mainImage.src = isMobile() ? animMobile : animDesktop;
+            setImageStyle();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            animationTimeout = setTimeout(() => {
+                mainImage.src = isMobile() ? defaultMobile : defaultDesktop;
+                setImageStyle();
+                animationTimeout = null;
+            }, 5000);
+        }
+
+        lockerAreaLBtn.addEventListener('click', function () {
+            showAnimation(animLockerAreaLDesktop, animLockerAreaLMobile);
+        });
+        c607Btn.addEventListener('click', function () {
+            showAnimation(animC607Desktop, animC607Mobile);
+        });
+        c606Btn.addEventListener('click', function () {
+            showAnimation(animC606Desktop, animC606Mobile);
+        });
+        c605Btn.addEventListener('click', function () {
+            showAnimation(animC605Desktop, animC605Mobile);
+        });
+        elevatorLobbyBtn.addEventListener('click', function () {
+            showAnimation(animElevatorLobbyDesktop, animElevatorLobbyMobile);
+        });
+        c604Btn.addEventListener('click', function () {
+            showAnimation(animC604Desktop, animC604Mobile);
+        });
+        c603Btn.addEventListener('click', function () {
+            showAnimation(animC603Desktop, animC603Mobile);
+        });
+        c602Btn.addEventListener('click', function () {
+            showAnimation(animC602Desktop, animC602Mobile);
+        });
+        c601Btn.addEventListener('click', function () {
+            showAnimation(animC601Desktop, animC601Mobile);
+        });
+        lockerAreaRBtn.addEventListener('click', function () {
+            showAnimation(animLockerAreaRDesktop, animLockerAreaRMobile);
+        });
+        auxBtn.addEventListener('click', function () {
+            showAnimation(animAuxDesktop, animAuxMobile);
+        });
+        eeBtn.addEventListener('click', function () {
+            showAnimation(animEEDesktop, animEEMobile);
+        });
+        fireExitStairBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStairDesktop, animFireExitStairMobile);
+        });
+        c608Btn.addEventListener('click', function () {
+            showAnimation(animC608Desktop, animC608Mobile);
+        });
+        c609Btn.addEventListener('click', function () {
+            showAnimation(animC609Desktop, animC609Mobile);
+        });
+        c610Btn.addEventListener('click', function () {
+            showAnimation(animC610Desktop, animC610Mobile);
+        });
+        c611Btn.addEventListener('click', function () {
+            showAnimation(animC611Desktop, animC611Mobile);
+        });
+        c612Btn.addEventListener('click', function () {
+            showAnimation(animC612Desktop, animC612Mobile);
+        });
+        c613Btn.addEventListener('click', function () {
+            showAnimation(animC613Desktop, animC613Mobile);
+        });
+        c614Btn.addEventListener('click', function () {
+            showAnimation(animC614Desktop, animC614Mobile);
+        });
+        fireExitStationBtn.addEventListener('click', function () {
+            showAnimation(animFireExitStationDesktop, animFireExitStationMobile);
+        });
+    
+
+        window.addEventListener('DOMContentLoaded', setImageStyle);
+        mainImage.addEventListener('load', setImageStyle);
     </script>
 </body>
 

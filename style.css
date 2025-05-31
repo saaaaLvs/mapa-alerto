@@ -117,7 +117,7 @@ body {
   border-bottom: 2px solid #e0e0e0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .top-links a.active-page {
     color: #ffffff !important;
     font-weight: bold;
@@ -725,7 +725,7 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .top-links a {
     color: #fff;
   }
@@ -986,6 +986,7 @@ hr.event-divider {
   margin: 0;
 }
 
+
 @media (max-width: 768px) {
   .event-box {
     padding: 20px 10px;
@@ -1021,3 +1022,38 @@ hr.event-divider {
 
 
 }
+
+@media (max-width: 1410px) and (min-width: 765px) {
+  .floor-list .row {
+    flex-direction: column;
+  }
+
+  .floor-list .col-6 {
+    width: 100%;
+    max-width: 100%;
+  }
+  .dropbtn{
+    width: 150px;
+    font-size: 14px;
+  }
+  #scrollable {
+  overflow-y: auto;
+  max-height: 460px;
+}
+}
+
+@media (max-width: 764px) {
+  .floor-list .row {
+    flex-direction: row;
+  }
+
+  .floor-list .col-6 {
+    width: 50%;
+    max-width: 50%;
+  }
+  #scrollable {
+  overflow-y: auto;
+  max-height: 320px;
+  }
+}
+
